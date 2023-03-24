@@ -8,7 +8,7 @@ public class FluxoError {
 		
 		try {
 		metodo1();
-		} catch (ArithmeticException | NullPointerException | MinhaExcecao e) {
+		} catch (ArithmeticException | NullPointerException e) {
 			String msg = e.getMessage();
 			System.out.println("Exception "+ msg);
 			e.printStackTrace();
