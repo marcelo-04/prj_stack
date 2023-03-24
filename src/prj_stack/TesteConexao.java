@@ -4,15 +4,26 @@ public class TesteConexao {
 
 	public static void main(String[] args) {
 		
-		Conexao conexao = null;
-		
-		try {
-			conexao = new Conexao();
-			conexao.leDados();			
+		try (Conexao conexao = new Conexao()) {
+			conexao.leDados();
 		} catch (IllegalStateException e) {
 			System.out.println("Erro de conexão!!!");
-		} finally {
-			conexao.fecha();
 		}
+		
+		// O código acima substitui todo o código abaixo
+		
+//		Conexao conexao = null;
+//		
+//		try {
+//			conexao = new Conexao();
+//			conexao.leDados();			
+//		} catch (IllegalStateException e) {
+//			System.out.println("Erro de conexão!!!");
+//		} finally {
+//			System.out.println("finally...");
+//			if (conexao != null) {
+//				conexao.close();
+//			}
+//		}
 	}
 }
